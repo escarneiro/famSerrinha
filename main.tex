@@ -1,0 +1,137 @@
+%& -jobname=A_Familia_de_Serrinha
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  A Familia de Serrinha
+%  
+%  Livro Histórico de 1929 que fala sobre a povoação do semi-arido baiano
+%	
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%------------------------------------------------------------------------------------
+%	Pacotes e outras configuracoes
+%------------------------------------------------------------------------------------
+
+\documentclass[12pt]{book} 
+
+\usepackage[portuguese]{babel}
+
+
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{xcolor,lipsum} % Required for specifying colors by name
+\definecolor{ocre}{RGB}{51,102,0} 
+\definecolor{lightgray}{RGB}{229,229,229} 
+
+% Font Settings
+\usepackage{avant} % Use the Avantgarde font for headings
+%\usepackage{times} % Use the Times font for headings
+\usepackage{mathptmx} % Use the Adobe Times Roman as the default text font together with math symbols from the Sym­bol, Chancery and Com­puter Modern fonts
+
+%\usepackage{fancyhdr}
+\pagestyle{plain}
+
+
+\usepackage{makeidx} %cria indice.
+
+\usepackage{float}
+\usepackage{geometry} %altera margens/dimensoes de uma pagina
+
+% MATHS PACKAGE
+\usepackage{amsmath,tikz}
+\usetikzlibrary{matrix}
+\newcommand*{\horzbar}{\rule[0.05ex]{2.5ex}{0.5pt}}
+\usepackage{calc}
+
+
+
+% serve pra colocar texto sem formatação (codigo)
+\usepackage{verbatim}
+
+% Bibliography
+\usepackage[style=alphabetic,sorting=nyt,sortcites=true,autopunct=true,babel=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber]{biblatex}
+\addbibresource{bibliography.bib} % BibTeX bibliography file
+\defbibheading{bibempty}{}
+
+
+\makeindex
+
+\begin{document}
+
+
+%------------------------------------------------------------------------------------
+%	CAPA
+%------------------------------------------------------------------------------------
+%\thispagestyle{empty}
+%\topmargin=-20mm
+%\hoffset=-20mm
+%\voffset=-20mm
+
+%usando newgeometry pra alinhar a imagem da capa.
+\newgeometry{left=5mm,right=5mm,top=2mm,bottom=5mm}
+\begin{figure}
+
+\centering
+\includegraphics[scale=0.95]{capa.png}
+
+\end{figure}
+\restoregeometry
+%------------------------------------------------------------------------------------
+%Informações Autorais
+%------------------------------------------------------------------------------------
+
+\thispagestyle{empty}
+
+
+\onecolumn
+\newpage
+\thispagestyle{empty}
+\begin{center}
+\vspace*{5cm}
+\Huge{\textbf{A Família de Serrinha\\}}
+\vspace*{3cm}
+\huge{\textbf{Dr. Antônio José de Araújo\\}}
+\vspace*{7cm}
+\huge{\textsc{Typ. do "O Serrinhense"}}
+\end{center}
+
+\newpage
+\thispagestyle{empty}
+%\noindent Copyright \copyright\ 1929 Dr Antônio José de Araújo\\ % Copyright notice
+%\small
+\noindent \textsc{A Família de Serrinha}\\\\
+\noindent \textsc{Originalmente Publicado em Junho de 1926 por:}  \textit{Dr Antônio José de Araújo}\\
+\noindent \textsc{Juiz de Direito de Jacobina} \\ % License information
+\noindent \textsc{Publicado por:} \textit{Typ. do "O Serrinhense"}\\ 
+\newline
+\noindent {Reedição realizada por Eder Carneiro}\\ 
+\noindent Fonte (Latex) em \url{https://github.com/escarneiro/famSerrinha}\\ 
+
+%------------------------------------------------------------------------------------
+%	Índice
+%------------------------------------------------------------------------------------
+\tableofcontents
+%------------------------------------------------------------------------------------
+%	Capitulos
+%------------------------------------------------------------------------------------
+
+\input{capitulos/Cap01}
+\include{capitulos/Cap02}
+\include{capitulos/Cap03}
+\include{capitulos/Cap04}
+\include{capitulos/Cap05}
+\include{capitulos/Cap06}
+\input{capitulos/Cap07}
+\input{capitulos/Cap08}
+\include{capitulos/Cap09}
+\include{capitulos/Cap10}
+\include{capitulos/Cap11}
+\include{capitulos/Cap12}
+
+% ----------------------------------------------------------------------------------------
+% 	Bibliografia (não há bibliografia)
+% ----------------------------------------------------------------------------------------
+\begin{comment}
+
+\end{comment}
+
+
+\end{document} 
